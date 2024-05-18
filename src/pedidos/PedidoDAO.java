@@ -1,0 +1,32 @@
+package pedidos;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import util.DBUtil;
+
+public class PedidoDAO {
+    public void agregarPedido(Pedido pedido) {
+        String sql = "INSERT INTO pedidos (nombre_cliente, apellidos_cliente, correo_electronico, telefono, direccion_envio, metodo_pago, fecha_entrega, monto_total) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        
+        try (
+            Connection connection = DBUtil.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql)
+        ) {
+            preparedStatement.setString(1, pedido.getNombreCliente());
+            preparedStatement.setString(2, pedido.getApellidosCliente());
+            preparedStatement.setString(3, pedido.getCorreoElectronico());
+            preparedStatement.setString(4, pedido.getTelefono());
+            preparedStatement.setString(5, pedido.getDireccionEnvio());
+            preparedStatement.setString(6, pedido.getMetodoPago());
+            preparedStatement.setString(7, pedido.getFechaEntrega());
+            preparedStatement.setDouble(8, pedido.getMontoTotal());
+            
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Otros métodos para actualizar y eliminar pedidos según sea necesario
+}
