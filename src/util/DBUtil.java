@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class DBUtil {
     // Configuración de la conexión a la base de datos
-    private static final String URL = "jdbc:mysql://localhost:3306/nombre_base_datos";
-    private static final String USUARIO = "usuario";
-    private static final String CONTRASENA = "contraseña";
+    private static final String URL = "jdbc:mariadb://localhost:3306/projecthomeappliancessro";
+    private static final String USUARIO = "root";
+    private static final String CONTRASENA = "";
 
     // Método para obtener una conexión a la base de datos
     public static Connection getConnection() throws SQLException {
