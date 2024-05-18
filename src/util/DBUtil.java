@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DBUtil {
     // Configuración de la conexión a la base de datos
-    private static final String URL = "jdbc:mariadb://localhost:3306/projecthomeappliancessro";
+    private static final String URL = "http://localhost/phpmyadmin/index.php?route=/database/structure&db=projecthomeappliancessro";
     private static final String USUARIO = "root";
     private static final String CONTRASENA = "";
 
