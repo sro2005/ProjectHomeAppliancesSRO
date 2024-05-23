@@ -7,7 +7,7 @@ import util.DBUtil;
 
 public class PedidoDAO {
     public void agregarPedido(Pedido pedido) {
-        String sql = "INSERT INTO pedidos (nombre_cliente, apellidos_cliente, correo_electronico, telefono, direccion_envio, metodo_pago, fecha_entrega, monto_total) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO pedidos (nombre_cliente, apellidos_cliente, correo_electronico, telefono, direccion_envio, metodo_pago, fecha_entrega, lista_productos, monto_total) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         
         try (
             Connection connection = DBUtil.getConnection();
@@ -20,7 +20,8 @@ public class PedidoDAO {
             preparedStatement.setString(5, pedido.getDireccionEnvio());
             preparedStatement.setString(6, pedido.getMetodoPago());
             preparedStatement.setString(7, pedido.getFechaEntrega());
-            preparedStatement.setDouble(8, pedido.getMontoTotal());
+            preparedStatement.setString(8, pedido.getListaProductos());
+            preparedStatement.setDouble(9, pedido.getMontoTotal());
             
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
