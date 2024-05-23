@@ -1,6 +1,6 @@
 # DESCRIPCIÓN DEL REPOSITORIO
 
-# Proyecto Home Appliances SRO
+# Proyecto "Home Appliances SRO"
 
 Este repositorio contiene el código fuente de un proyecto de software llamado "Home Appliances". El proyecto está diseñado para gestionar inventarios, pedidos y clientes de una tienda de electrodomésticos. Fue desarrollado como parte de una evidencia de desempeño para el componente formativo "Construcción de aplicaciones con Java".
 
@@ -17,4 +17,3 @@ Este repositorio contiene el código fuente de un proyecto de software llamado "
 - `README.md`: Proporciona información básica sobre el proyecto, instrucciones de instalación y uso, así como cualquier otra información relevante.
 
 ¡Gracias por visitar nuestro repositorio!
-
