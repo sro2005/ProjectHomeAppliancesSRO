@@ -1,12 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Clientes</title>
+    <title>Formulario de Cliente</title>
 </head>
 <body>
-    <h1>Lista de Clientes</h1>
-    <form action="cliente" method="post">
+    <h2>Formulario de Cliente</h2>
+    <form action="ClienteServlet" method="post">
         <label for="nombres">Nombres:</label>
         <input type="text" id="nombres" name="nombres" required><br>
         
@@ -23,26 +24,12 @@
         <input type="text" id="direccion" name="direccion" required><br>
         
         <label for="telefono">Teléfono:</label>
-        <input type="text" id="telefono" name="telefono" required><br>
+        <input type="tel" id="telefono" name="telefono" required><br>
         
         <label for="preferenciasProductos">Preferencias de Productos:</label>
-        <input type="text" id="preferenciasProductos" name="preferenciasProductos"><br>
+        <textarea id="preferenciasProductos" name="preferenciasProductos"></textarea><br>
         
-        <button type="submit">Agregar Cliente</button>
+        <input type="submit" value="Enviar">
     </form>
-
-    <h2>Clientes Registrados</h2>
-    <ul>
-        <% 
-            List<Cliente> clientes = (List<Cliente>) request.getAttribute("clientes");
-            if (clientes != null) {
-                for (Cliente cliente : clientes) {
-        %>
-                    <li><%= cliente.getNombres() %> <%= cliente.getApellidos() %></li>
-        <% 
-                }
-            }
-        %>
-    </ul>
 </body>
 </html>

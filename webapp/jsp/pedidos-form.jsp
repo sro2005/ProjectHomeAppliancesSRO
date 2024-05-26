@@ -1,12 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Pedidos</title>
+    <title>Formulario de Pedido</title>
 </head>
 <body>
-    <h1>Lista de Pedidos</h1>
-    <form action="pedido" method="post">
+    <h2>Formulario de Pedido</h2>
+    <form action="PedidoServlet" method="post">
         <label for="nombreCliente">Nombre del Cliente:</label>
         <input type="text" id="nombreCliente" name="nombreCliente" required><br>
         
@@ -17,38 +18,27 @@
         <input type="email" id="correoElectronico" name="correoElectronico" required><br>
         
         <label for="telefono">Teléfono:</label>
-        <input type="text" id="telefono" name="telefono" required><br>
+        <input type="tel" id="telefono" name="telefono" required><br>
         
         <label for="direccionEnvio">Dirección de Envío:</label>
         <input type="text" id="direccionEnvio" name="direccionEnvio" required><br>
         
         <label for="metodoPago">Método de Pago:</label>
-        <input type="text" id="metodoPago" name="metodoPago" required><br>
+        <select id="metodoPago" name="metodoPago">
+            <option value="Efectivo">Efectivo</option>
+            <option value="Tarjeta">Tarjeta</option>
+        </select><br>
         
         <label for="fechaEntrega">Fecha de Entrega:</label>
         <input type="date" id="fechaEntrega" name="fechaEntrega" required><br>
         
         <label for="listaProductos">Lista de Productos:</label>
-        <textarea id="listaProductos" name="listaProductos" required></textarea><br>
+        <textarea id="listaProductos" name="listaProductos"></textarea><br>
         
         <label for="montoTotal">Monto Total:</label>
-        <input type="number" id="montoTotal" name="montoTotal" required><br>
+        <input type="number" id="montoTotal" name="montoTotal" step="0.01" min="0" required><br>
         
-        <button type="submit">Agregar Pedido</button>
+        <input type="submit" value="Enviar">
     </form>
-
-    <h2>Pedidos Registrados</h2>
-    <ul>
-        <% 
-            List<Pedido> pedidos = (List<Pedido>) request.getAttribute("pedidos");
-            if (pedidos != null) {
-                for (Pedido pedido : pedidos) {
-        %>
-                    <li><%= pedido.getNombreCliente() %> <%= pedido.getApellidosCliente() %> - <%= pedido.getMontoTotal() %></li>
-        <% 
-                }
-            }
-        %>
-    </ul>
 </body>
 </html>
