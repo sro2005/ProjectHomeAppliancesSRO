@@ -3,7 +3,8 @@ package pedidos;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import util.DBUtil;
+
+import utilidades.DBUtil;
 
 public class PedidoDAO {
     public void agregarPedido(Pedido pedido) {
@@ -25,7 +26,8 @@ public class PedidoDAO {
             
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Error al agregar pedido a la base de datos", e);
+            // Lanzar una excepción personalizada
         }
     }
 

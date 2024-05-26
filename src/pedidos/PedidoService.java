@@ -1,7 +1,7 @@
 package pedidos;
 
 public class PedidoService {
-    private PedidoDAO pedidoDAO;
+    private final PedidoDAO pedidoDAO;
 
     public PedidoService() {
         this.pedidoDAO = new PedidoDAO();
