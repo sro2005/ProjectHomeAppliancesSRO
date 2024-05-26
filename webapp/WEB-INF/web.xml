@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
-         version="4.0">
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" 
+         version="3.1">
 
-    <display-name>TuAplicacion</display-name>
-
-    <!-- Mapeo de servlets -->
+    <servlet>
+        <servlet-name>ClienteServlet</servlet-name>
+        <servlet-class>web.servlets.ClienteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClienteServlet</servlet-name>
+        <url-pattern>/cliente</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>PedidoServlet</servlet-name>
+        <servlet-class>web.servlets.PedidoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PedidoServlet</servlet-name>
+        <url-pattern>/pedido</url-pattern>
+    </servlet-mapping>
+    
     <servlet>
         <servlet-name>ProductoServlet</servlet-name>
         <servlet-class>web.servlets.ProductoServlet</servlet-class>
@@ -15,9 +31,5 @@
         <servlet-name>ProductoServlet</servlet-name>
         <url-pattern>/producto</url-pattern>
     </servlet-mapping>
-
-    <!-- Otros mapeos de servlets -->
-
-    <!-- Configuración adicional como filtros, escuchadores, etc. -->
-
+    
 </web-app>
