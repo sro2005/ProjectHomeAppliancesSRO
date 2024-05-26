@@ -1,9 +1,9 @@
 package test;
 
-import util.DBUtil;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import utilidades.DBUtil;
 
 public class TestDBConnection {
     public static void main(String[] args) {
@@ -19,8 +19,7 @@ public class TestDBConnection {
                 System.out.println("Tabla de prueba creada exitosamente");
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("Error al conectar con la base de datos");
+            System.out.println("Error al conectar con la base de datos: " + e.getMessage());
         }
     }
 }
