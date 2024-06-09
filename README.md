@@ -13,7 +13,7 @@ Este repositorio contiene el código fuente de un proyecto de software llamado "
 
 ## Estructura del Repositorio
 
-- `src/`: Contiene el código fuente del proyecto, organizado en paquetes según los diferentes módulos (controllers, pmodels, repositories, services).
+- `src/`: Contiene el código fuente del proyecto, organizado en paquetes según los diferentes módulos (controllers, models, repositories, services).
 - `README.md`: Proporciona información básica sobre el proyecto, instrucciones de instalación y uso, así como cualquier otra información relevante.
 
 ¡Gracias por visitar nuestro repositorio!
